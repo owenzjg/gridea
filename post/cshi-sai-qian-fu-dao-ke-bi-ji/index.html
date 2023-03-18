@@ -1,0 +1,538 @@
+<html>
+<head>
+    <!--
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<!--这个是基本代码-->
+<style>
+    .pace .pace-progress {
+    	background: #1E92FB; /*进度条颜色*/
+    	height: 3px;
+    }
+    .pace .pace-progress-inner {
+     	box-shadow: 0 0 10px #1E92FB, 0 0 5px #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+    	border-top-color: #1E92FB;	/*上边框颜色*/
+    	border-left-color: #1E92FB;	/*左边框颜色*/
+    }
+  </style>
+<!--这个是更改颜色的-->
+<!--上面这段代码是为了顶部加载条准备的-->
+<meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>[c++]市赛前辅导课笔记 | Owenzjg&#39;s blog</title>
+
+<link rel="shortcut icon" href="https://owenzjg.netlify.app/favicon.ico?v=1679147409856">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://owenzjg.netlify.app/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    
+</head>
+<body>
+
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Owenzjg&#39;s blog
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tag/rHfLoJkSS/" class="menu gt-a-link">
+                    专题
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/friends" class="menu gt-a-link">
+                    友链
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1679147409856"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+<script>
+/* 百度统计 */
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d1b0e8fbeee11aa2f032dccdf777a613";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+			
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    [c++]市赛前辅导课笔记
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-03-18 ·
+                    </time>
+                    
+                        <a href="https://owenzjg.netlify.app/tag/4CQi8I8dO/" class="post-tags">
+                            # c++ ·
+                        </a>
+                    
+                    
+                    <time>6 min read · </time>
+                    <!--阅读时长-->
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量:<span id="busuanzi_value_page_pv"></span>次 ·
+                    </span>
+                </div>
+
+                <!--
+                    头图代码
+                    <img src=''></a>
+                -->
+                
+                <!--
+                所有文章访问总数：
+                <img src='https://www.free-website-hit-counter.com/c.php?d=9&amp;id=143602&amp;s=1' border='0' ></a>
+                -->
+                
+                <blockquote>
+                    <p>为了你看到的是最新博文，请点击下方链接到我的博客owenzjg's blog观看此文</p>
+                    <a href="https://owenzjg.netlify.app/post/cshi-sai-qian-fu-dao-ke-bi-ji/" title="[c++]市赛前辅导课笔记">https://owenzjg.netlify.app/post/cshi-sai-qian-fu-dao-ke-bi-ji/</a>
+                    <p>ps:为了观者体验，请转载时保留这段文字。</p>
+                </blockquote>
+                
+                <div class="post-content">
+                    <blockquote>
+<p>本文章比较长，所有代码都是去除文件操作、头文件等的代码。</p>
+</blockquote>
+<h1 id="考试宗旨">考试宗旨</h1>
+<p>简单题拿满分<br>
+偏难题骗点分</p>
+<h1 id="考试注意">考试注意</h1>
+<ol>
+<li>文件操作不要忘记！</li>
+<li>文件操作的文件名不要拼写错误！</li>
+<li>文件目录格式不要搞错。<br>
+准考证号-题目名称-题目名称.cpp<br>
+<img src="https://owenzjg.netlify.app/post-images/1679104216677.png" alt="" loading="lazy"></li>
+<li>提前熟悉<code>noi linux2.0</code>和台式机键盘</li>
+<li>实际测试的时候可以建立一个 <code>.in</code> 文件测试，降低错误几率。</li>
+<li>过一遍最近几年的市赛题目</li>
+<li>要带草稿纸和笔</li>
+</ol>
+<h1 id="2020合肥市市赛">2020合肥市市赛</h1>
+<p>先进行2020的题目，分数线240分，4道题目。</p>
+<h2 id="小c的数学math">小C的数学[math]</h2>
+<p>这道题目看起来非常简单，但是比较容易被坑。</p>
+<p>第一道题目一定要细心，不然就凉透了</p>
+<p>首先看最大的数据范围。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo separator="true">,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">b,c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span></span></span></span> 都到 10<sup>18</sup> ， 直接上 <code>long long</code>,而且肯定不可以<code>for</code>便利。</p>
+<p>正解的话有很多种，这里我就直接上我的解法了，还是比较好理解的。</p>
+<pre><code class="language-cpp">    long long a, b, c;
+    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+    b = ceil((b * 1.0 / a));
+    c = floor((c * 1.0 / a));
+    cout &lt;&lt; c - b + 1;
+    return 0;
+</code></pre>
+<p>当然，还有很多别的方法，比如说两边是的就 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span> 等</p>
+<pre><code class="language-cpp">    long long a, b, c;
+    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+    if(c%a!=0 &amp;&amp; b%a!=0){
+        cout&lt;&lt;(c-b)/a&lt;&lt;endl;
+    }else{
+        cout&lt;&lt;(c-b)/a+1&lt;&lt;endl;
+    }
+    return 0;
+</code></pre>
+<h2 id="小c的数组array">小C的数组[array]</h2>
+<p>首先，写双重 <code>for</code> 循环肯定超时，是下下策。</p>
+<p>而且，这道题目要求<strong>求和</strong>，必须要注意。</p>
+<p>10<sup>6</sup> * 10<sup>6</sup> = 10<sup>12</sup></p>
+<p>肯定要开<code>long long</code>。</p>
+<p>这个题目就是找一个规律，也是有很多种做法。</p>
+<pre><code class="language-cpp">ll n;
+cin &gt;&gt; n;
+ll cnt = 0;
+ll last = 0;
+for (ll i = 1; i &lt;= n; i++) {
+    cin &gt;&gt; a[i];
+    if (a[i] != a[i - 1])
+        last = i - 1;
+    t[a[i]] = i;
+    cnt += t[a[last]];
+}
+cout &lt;&lt; cnt;
+</code></pre>
+<p>或者说，用个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span> 数组递推一下也可以。</p>
+<pre><code class="language-cpp">long long he=0;
+cin&gt;&gt;n;
+for(int i=1;i&lt;=n;i++){
+    cin&gt;&gt;a[i];
+    if(a[i]!=a[i-1]){
+        f[i]=i-1;
+    }else{
+        f[i]=f[i-1];
+    }
+    he+=f[i];
+}
+cout&lt;&lt;he;
+</code></pre>
+<h2 id="小c的数-number">小C的数 [number]</h2>
+<p>这道题目实在不会可以拿部分分。</p>
+<p>题目一定要认真读，不要读错题目了。</p>
+<p>先瞅一眼骗分写法：</p>
+<ol>
+<li><code>dfs</code> -- 40分 -- O(2<sup>n</sup>)<br>
+对于每一个数，选或不选。选的话就还要把前面所有的便利判断一遍。<br>
+最后全部选完过后打擂台。</li>
+<li>最长上升子序列 -- 60分 -- O(n<sup>2</sup>)<br>
+这个题目虽然说要取子序列，但是最后只要取长度，所以说选择的顺序并不重要。<br>
+核心代码如下：<pre><code class="language-cpp">sort(a, a + n);
+ int maxx = 0;
+ for (int i = 0; i &lt; n; i++) {
+     for (int j = 0; j &lt; i; j++) {
+         if (a[i] % a[j] == 0) {
+             f[i] = max(f[i], f[j]);
+         }
+     }
+     f[i]++;
+     maxx = max(maxx, f[i]);
+ }
+ cout &lt;&lt; maxx;
+</code></pre>
+</li>
+</ol>
+<p>最终的正解类是一个dp，还是比较好理解的。时间限时是2秒，正好擦边球过的</p>
+<pre><code class="language-cpp">int n;
+scanf(&quot;%d&quot;, &amp;n);
+int maxx = 0;
+int ans = 0;
+for (int i = 1; i &lt;= n; i++) {
+    int x;
+    scanf(&quot;%d&quot;, &amp;x);
+    cnt[x]++;
+    f[x]++;
+    ans = max(ans, f[x]);
+    maxx = max(maxx, x);
+}
+for (int i = maxx; i &gt;= 1; i--) {
+    for (int k = 2; k * i &lt;= maxx; k++) {
+        f[i] = max(f[i], f[i * k] + cnt[i]);
+        ans = max(ans, f[i]);
+    }
+}
+printf(&quot;%d&quot;, ans);
+</code></pre>
+<h2 id="小c的树-tree">小C的树 [tree]</h2>
+<p>老师没有讲，b站上找到一个比较好的老师<br>
+【2020年合肥市信息学试卷_第04题_小C的树(tree)】<a href="https://www.bilibili.com/video/BV1rg411F7vs?vd_source=34678a154c41e828605d5cec90546e38">https://www.bilibili.com/video/BV1rg411F7vs?vd_source=34678a154c41e828605d5cec90546e38</a></p>
+<h1 id="2021合肥市市赛">2021合肥市市赛</h1>
+<p>4到题目，分数线400分</p>
+<h2 id="小c的计算-sum">小C的计算 [sum]</h2>
+<p>没啥好讲的，先写一个质数判断的函数</p>
+<pre><code class="language-cpp">bool zhi(int x) {
+    if (x &lt; 2)
+        return 0;
+    for (int i = 2; i * i &lt;= x; i++) {
+        if (x % i == 0)
+            return 0;
+    }
+    return 1;
+}
+</code></pre>
+<p>然后 <code>for</code> 便利即可</p>
+<pre><code class="language-cpp">int x, y;
+cin &gt;&gt; x &gt;&gt; y;
+long long cnt = 0;
+for (int i = x; i &lt;= y; i++) {
+    if (zhi(i))
+        cnt += i;
+}
+cout &lt;&lt; cnt;
+</code></pre>
+<h2 id="小c的工作-work">小C的工作 [work]</h2>
+<p>这个题目不太方便文字叙述，两张图片即可<br>
+<img src="https://owenzjg.netlify.app/post-images/1679110410307.png" alt="" loading="lazy"><br>
+<img src="https://owenzjg.netlify.app/post-images/1679110417252.png" alt="" loading="lazy"></p>
+<p>看完这个就比较好理解了，再自己那一张草稿纸哗啦哗啦就可以了。</p>
+<pre><code class="language-cpp">ll n;
+cin&gt;&gt;n;
+ll i;
+for(i=1;i&lt;=n;i++){
+	cin&gt;&gt;a[i][0]&gt;&gt;a[i][1];
+	x=max(x,a[i][0]+a[i][1]);
+	y=min(a[i][0],y);
+}
+for(i=1;i&lt;=n;i++){
+	x-=a[i][1];
+}
+cout&lt;&lt;min(x,y);
+</code></pre>
+<p>当然，这个如果不是特别可以理解的话也可以用另一种稍微更费时间的算法.<br>
+先定义一下<code>node</code>类型和<code>cmp</code>排序函数</p>
+<pre><code class="language-cpp">struct node {
+    long long begin, end, len;
+} a[200010];
+bool cmp(node x, node y) {
+    return x.end &lt; y.end;
+}
+</code></pre>
+<p>然后main函数非常好理解</p>
+<pre><code class="language-cpp">int n;
+int i;
+cin &gt;&gt; n;
+for (i = 0; i &lt; n; i++) {
+    cin &gt;&gt; a[i].begin &gt;&gt; a[i].len;
+    a[i].end = a[i].begin + a[i].len;
+}
+sort(a, a + n, cmp);
+long long ans = a[n - 1].begin;
+for (i = n - 2; i &gt;= 0; i--) {
+    if (ans &lt;= a[i].end) {
+        ans -= a[i].len;
+    } else {
+        ans = a[i].begin;
+    }
+}
+cout &lt;&lt; ans;
+</code></pre>
+<h2 id="小-c-爱观察-observe">小 C 爱观察 [observe]</h2>
+<h2 id="小-c-切蛋糕-cake">小 C 切蛋糕 [cake]</h2>
+
+                </div>
+                <div class="post-footer">
+	<p>欢迎在留言区讨论发言，我会尽量快速回复</p>
+	<p>本博客经常写系列文章，建议到「专题」中查看同类文章。</p>
+	<!--<h1 id="后续">后续</h1>  -->
+	
+	<blockquote>
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：owenzjg</strong>
+      
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://owenzjg.netlify.app/post/cshi-sai-qian-fu-dao-ke-bi-ji/" title="[c++]市赛前辅导课笔记">https://owenzjg.netlify.app/post/cshi-sai-qian-fu-dao-ke-bi-ji/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">转载要求： </strong>
+      转载请在文首显眼出表明本文链接且在留言区告知我并附上你转载到哪里的链接。
+    </li>
+  </ul>
+	</blockquote>
+</div>
+
+            </article>
+        </div>
+		<p>注：评论输入框在最下面。若没有评论区请稍等加载。</p>
+		<script src="https://utteranc.es/client.js"
+				repo="owenzjg/owenzjg.github.io"
+				issue-term="title"
+				theme="github-light"
+				crossorigin="anonymous"
+				async>
+		</script>
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://owenzjg.netlify.app/post/si-xue-2022-luo-zhen-yu-kua-nian-yan-jiang/" class="post-title gt-a-link">
+                    [思学]2022罗振宇跨年演讲
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <script>
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }</script><script type="text/javascript" language="javascript">
+    function setTime() {
+        var create_time = Math.round(new Date(Date.UTC(2023, 00, 09, 10, 32, 0)).getTime() / 1000);
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
+                + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+                + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }    setInterval(setTime, 1000);</script>
+    
+    
+<div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">Always continue; Never break;
+</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+        </script>
+        <span id="busuanzi_container_site_pv">
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <br>
+        <span id="busuanzi_container_site_uv">
+            本站访客数为<span id="busuanzi_value_site_uv"></span>人次
+          </span>
+        <br>
+        
+        <!--
+        网站总访问量：<img src='https://www.free-website-hit-counter.com/c.php?d=9&id=143596&s=1'></a>
+        -->
+       网站稳定运行：<span id="htmer_time" style="color: black;"></span>
+         <!--Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>,--> 
+        <br>
+        <a href="https://icp.gov.moe/?keyword=20237890" target="_blank">萌ICP备20237890号</a>
+        <br>
+        Powered by <ahref="https://owenzjg.netlify.app/" target="_blank">Owenzjg</a> | 
+        <a href="https://owenzjg.netlify.app/atom.xml" target="_blank">RSS</a> 
+        <!--  <a href="https://www.luogu.com.cn/user/515971">luogu </a>
+&#160and&#160
+<a href="https://space.bilibili.com/2141375851/"> bilibili</a>.
+<br>
+网站总访问量：<img src='https://www.free-website-hit-counter.com/c.php?d=9&id=143596&s=1' border='0' ></a>
+<br>
+网站状态: <img src='https://api.netlify.com/api/v1/badges/33964a3e-8918-45d9-89a4-a5d74cee8f6c/deploy-status' ></a>
+<br>
+<a href="https://icp.gov.moe/?keyword=20237890" target="_blank">萌ICP备20237890号</a> -->
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
